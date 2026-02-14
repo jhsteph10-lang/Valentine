@@ -78,9 +78,10 @@ img {
 
 <body>
 
-<audio autoplay loop>
+<audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
+
 
 <div class="container" id="mainBox">
     <div id="countdown"></div>
@@ -91,7 +92,7 @@ img {
 
 <script>
 // Countdown (10 seconds dramatic intro)
-let timeLeft = 100000000000;
+let timeLeft = 10;
 let countdown = document.getElementById("countdown");
 
 let timer = setInterval(() => {
@@ -121,6 +122,8 @@ function moveNo(){
 
 // YES clicked
 function yesAnswer(){
+    document.getElementById("bgMusic").play();
+
     document.body.classList.add("pink-bg");
     document.body.style.backgroundImage="none";
 
